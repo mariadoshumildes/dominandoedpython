@@ -1,0 +1,7 @@
+def search(self, descricao):
+    atual = self.head
+    while atual is not None:
+        if atual.data.descricao.lower() == descricao.lower():
+            return atual.data
+        atual = atual.next
+    return None
