@@ -13,3 +13,4 @@ def insert(self, produto):
     else:
         novo_no.next = atual
         anterior.next = novo_no
+
