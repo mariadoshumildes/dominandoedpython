@@ -1,0 +1,15 @@
+def insert(self, produto):
+    novo_no = Node(produto)
+    atual = self.head
+    anterior = None
+
+    while atual is not None and atual.data.descricao.lower() < produto.descricao.lower():
+        anterior = atual
+        atual = atual.next
+
+    if anterior is None:
+        novo_no.next = self.head
+        self.head = novo_no
+    else:
+        novo_no.next = atual
+        anterior.next = novo_no
