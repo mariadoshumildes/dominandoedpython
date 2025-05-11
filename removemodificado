@@ -1,0 +1,16 @@
+def remove(self, descricao):
+    atual = self.head
+    anterior = None
+
+    while atual is not None and atual.data.descricao.lower() != descricao.lower():
+        anterior = atual
+        atual = atual.next
+
+    if atual is None:
+        return False
+
+    if anterior is None:
+        self.head = atual.next
+    else:
+        anterior.next = atual.next
+    return True
