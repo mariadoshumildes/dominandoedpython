@@ -1,0 +1,45 @@
+Disciplina: Estrutura de Dados com Python
+Repositório Base: DominandoEDComPython
+Objetivo: Adaptar a classe OrderedList para ordenar elementos com base no atributo descricao ao invés de preco.
+
+Modificações Realizadas
+A estrutura da lista encadeada foi mantida, mas a lógica de ordenação, busca e remoção foi modificada para trabalhar com o atributo descricao, do tipo string. As principais alterações ocorreram nos métodos:
+
+insert: alterado para inserir elementos de forma ordenada com base na ordem alfabética da descrição.
+
+search: modificado para procurar produtos com base na descrição.
+
+remove: ajustado para remover nós da lista comparando pela descrição.
+
+Exemplo de Código de Teste
+python
+Copiar
+Editar
+from ordered_list import OrderedList, Produto
+
+lista = OrderedList()
+
+# Inserção
+lista.insert(Produto("Banana", 3.50))
+lista.insert(Produto("Maçã", 2.80))
+lista.insert(Produto("Abacaxi", 5.00))
+
+# Impressão ordenada
+lista.print_list()  # Esperado: Abacaxi, Banana, Maçã
+
+# Busca
+produto = lista.search("Banana")
+print("Produto encontrado:", produto)
+
+# Remoção
+lista.remove("Maçã")
+lista.print_list()  # Esperado: Abacaxi, Banana
+Desafios Encontrados
+A principal dificuldade foi alterar a lógica de comparação, uma vez que strings possuem comportamento diferente de números. Também foi necessário garantir que as comparações fossem feitas de forma case-insensitive, para evitar problemas com letras maiúsculas e minúsculas.
+
+Reflexão sobre a Ordenação por Descrição
+Alterar a chave de ordenação impacta diretamente no comportamento da estrutura. Quando a lista está ordenada por preço, ela é eficiente para operações financeiras; ao ordenar por descrição, torna-se mais intuitiva para catálogos e buscas por nome. A mudança exige atenção na manutenção da lógica de comparação, mas melhora a clareza em contextos voltados ao usuário.
+
+Conclusão
+A atividade permitiu entender de forma prática como a chave de ordenação influencia a estrutura de dados e seu desempenho. A experiência reforçou o valor da abstração na programação e o papel das listas ordenadas em sistemas reais. A modificação foi bem-sucedida, com testes demonstrando a ordenação e as operações funcionando corretamente.
+
